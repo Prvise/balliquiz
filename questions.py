@@ -1,8 +1,14 @@
 import random
 from cs50 import SQL
+import os
+
+
+# create database
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+STATISTICS_DB = os.path.join(BASE_DIR, "statistics.db")
 
 # initialize database
-db = SQL("sqlite:///statistics.db")
+db = SQL(f"sqlite:///{STATISTICS_DB}")
 league_names = ["Premier League", "Serie A", "LaLiga", "Bundesliga"]
 competition_names = [
     "Premier League",
