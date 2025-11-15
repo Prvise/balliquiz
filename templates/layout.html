@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+         <!-- http://getbootstrap.com/docs/5.3/ -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link href="/static/stylesheet/style.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon.png') }}">
+        <audio id="tickSound" src="{{ url_for('static', filename='/sounds/11L-clock_watch_ticking-42965173.mp3') }}" preload="none"></audio>
+        <audio id="dingSound" src="{{ url_for('static', filename='/sounds/11L-low_ding-68884279.mp3') }}" preload="none"></audio>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <!--Navbar-->
+        <nav id="navbar" class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand"><h3>{% block navbar %}{% endblock %}</h3></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {% block navbar_button %}{% endblock %}
+                <li class="nav-item">
+                 <form action="/">
+                    <button class="nav-link active" aria-current="page">Logout</a>
+                </form>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+        <div class="container py-5 text-center">
+        {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>
+

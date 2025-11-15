@@ -1,0 +1,128 @@
+body
+{
+  background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("/static/images/peakpx.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+
+#title
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    text-align: center;
+    margin: 0;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    color: aliceblue;
+
+}
+
+.timer
+{
+  font-size: 18px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+
+.section
+{
+  margin: 0;
+  min-height: 40vh; /* full viewport height */
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically */
+  background-color: rgba(0, 0, 0, 0); /* optional */
+  color: black; /* optional */
+}
+
+.section_bar
+{
+  margin: 0;
+  min-height: 10vh; /* full viewport height */
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically */
+  background-color: rgba(0, 0, 0, 0); /* optional */
+  color: black; /* optional */
+}
+
+.containers
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 20px;
+
+}
+
+.answers-grid button {
+  background-color: #222;
+  color: white;
+  border: 2px solid #555;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.answers-grid button:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+.answers-grid button.correct {
+  background-color: green;
+}
+
+.answers-grid button.incorrect {
+  background-color: red;
+}
+
+#fade-right
+{
+  opacity: 0;
+  translate: -50%;
+  transition: 1500ms ease;
+}
+
+#fade-right.show{
+  opacity: 1;
+  translate: 0;
+}
+
+#fade-up
+{
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1500ms ease;
+}
+
+#fade-up.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#scale-up{
+  scale: 0;
+  transition: 400ms ease;
+}
+
+#scale-up.show{
+  scale:1;
+}

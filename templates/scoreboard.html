@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Scoreboard
+{% endblock %}
+
+<!--Navbar extend -->
+{% block navbar_button %}
+<li class="nav-item">
+<form action="/homepage">
+    <button class="nav-link active" aria-current="page">Play</a>
+</form>
+</li>
+{% endblock %}
+
+{% block body %}
+
+<div id="title" style="height: 20vh;">Scoreboard</div>
+  <table class="table table-dark table-sm">
+    <thead>
+        <tr>
+            <th scope="col">username</th>
+            <th scope="col">points</th>
+            <th scope="col">rank</th>
+        </tr>
+     </thead>
+     <tbody>
+        {% for user in data %}
+        <tr>
+            <td id="username">{{user["username"]}}</td>
+            <td id="points">{{user["points"]}}</td>
+            <td>{{loop.index}}</td>
+        </tr>
+        {% endfor %}
+     </tbody>
+    </table>
+
+{% endblock %}

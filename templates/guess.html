@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Guess the player{% endblock %}
+
+{% block body %}
+    <div class="mb-3">
+      <div class="timer">
+        Time left: <span id="countdown">60</span> seconds
+      </div>
+    </div>
+    <div class="mb-3" style="color: white;" id="question"></div>
+    <div class="section">
+      <div class="mb-3">
+         <div class="mb-3">
+          <div class="mb-3">
+          <div id="answers" class="answers-grid"></div>
+          </div>
+              <input class="form-control mx-auto w-auto" style="opacity: 0;" name="answer" placeholder="" autofocus autocomplete="off" disabled>
+            </div>
+      </div>
+    </div>
+    <div id="response"></div>
+
+
+<script>
+  window.trivia = JSON.parse('{{ question | tojson | safe }}');
+  window.possibleAnswers = JSON.parse('{{ possible_answers | tojson | safe}}');
+  window.correctAns = JSON.parse('{{ answer | tojson | safe}}');
+</script>
+<script src="{{ url_for('static', filename='javascript/guess_mode.js') }}" defer></script>
+
+{% endblock %}

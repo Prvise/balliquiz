@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Search team{% endblock %}
+
+{% block body %}
+
+    <div class="mb-4" style="color: white;">
+        <h2>Select a team</h2>
+    </div>
+    <div class="section_bar">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="team" placeholder="Search" autofocus autocomplete="off" required>
+        </div>
+    </div>
+        <form action="/general_quiz" method="post">
+            <ul id="teams"></ul>
+        </form>
+
+
+
+<div class="modal fade" id="alertModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white text-center p-3">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalTitle">Message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="modalBody">default message.</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  {% if error %}
+  window.errorAlert = JSON.parse(`{{ error | tojson | default("null")}}`)
+  {% endif %}
+</script>
+<script src="{{ url_for('static', filename='javascript/search_team.js') }}" defer></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}General Quiz{% endblock %}
+
+{% block body %}
+    <div class="mb-3">
+            <div class="timer">
+              Time left: <span id="countdown">60</span> seconds
+            </div>
+        </div>
+    <div class="mb-3" style="color: white;" id="question"></div>
+    <div class="section">
+      <div class="mb-3">
+         <div class="mb-3">
+              <input class="form-control mx-auto w-auto" name="answer" placeholder="" autofocus autocomplete="off" required>
+            </div>
+      </div>
+    </div>
+    <div id="response"></div>
+
+
+<script>
+  window.question = JSON.parse('{{ question | tojson | safe}}');
+</script>
+<script src="{{ url_for('static', filename='javascript/general_quiz.js') }}" defer></script>
+
+{% endblock %}

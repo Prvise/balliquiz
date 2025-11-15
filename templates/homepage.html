@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}Select mode{% endblock %}
+
+{% block navbar %}Select mode{% endblock %}
+
+{% block navbar_button %}
+<li class="nav-item">
+<form action="/scoreboard">
+<button class="nav-link active" aria-current="page">Scoreboard</a>
+</form>
+</li>
+{% endblock %}
+
+{% block body %}
+<div class= containers>
+
+    <div class="section">
+        <div class="mb-3" id="scale-up">
+        <div class="card text-bg-primary mb-3 border-dark" style="width: 18rem;">
+            <img src="static/images/peakpx.jpg" class="card-img-top" alt="Football image">
+                <div class="card-body">
+                    <h2 class="card-title">General Quiz</h2>
+                    <p class="card-text">Answer questions about players from your favourite team based their profile and statistics.</p>
+                    <p class="card-text"><small>Difficulty: Easy/Medium</small></p>
+                    <button id="generalPlayButton" class="btn btn-secondary btn-light" type="submit">Play</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="mb-3" id="scale-up">
+        <div class="card text-bg-primary mb-3 border-dark" style="width: 18rem;">
+            <img src="static/images/skysports-premier-league-football-philippe-coutinho.jpg" class="card-img-top" alt="Football image">
+                <div class="card-body">
+                    <h2 class="card-title">Who am I</h2>
+                    <p class="card-text">Try to figure out who the player or club manager is before time runs out.</p>
+                    <p class="card-text"><small>Difficulty: Medium/Hard</small></p>
+                    <button id="guessPlayButton" class="btn btn-secondary btn-light" type="submit">Play</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="mb-3" id="scale-up">
+        <div class="card text-bg-primary mb-3 border-dark" style="width: 18rem;">
+            <img src="static/images/psg-ucl-win-1536x863.jpg" class="card-img-top" alt="Football image">
+                <div class="card-body">
+                    <h2 class="card-title">Best Of The Season</h2>
+                    <p class="card-text">Answer questions about team performance from some of the best leagues in European Football</p>
+                    <p class="card-text"><small>Difficulty: Medium/Hard</small></p>
+                    <button id="bestOfPlayButton" class="btn btn-secondary btn-light" type="submit">Play</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white text-center p-3">
+        <div class="modal-header border-0">
+            <h5 class="modal-title" id="modalTitle">Message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p id="modalBody">default message.</p>
+        </div>
+        <div class="modal-footer border-0">
+            <button id="startButton" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Press to start</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+</div>
+
+<script src="{{ url_for('static', filename='javascript/homepage.js') }}" defer></script>
+{% endblock %}
+
