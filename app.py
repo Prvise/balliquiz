@@ -4,13 +4,18 @@ from questions import trivia_1, random_question, bestOf
 from werkzeug.security import check_password_hash, generate_password_hash
 from functools import wraps
 from cs50 import SQL
+import os
 
 # initialize app
 app = Flask(__name__)
 
 # create database
-db = SQL("sqlite:///statistics.db")
-accounts_db = SQL("sqlite:///accounts.db")
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+ACCOUNTS_DB = os.path.join(BASE_DIR, "accounts.db")
+STATISTICS_DB = os.path.join(BASE_DIR, "statistics.db")
+db = SQL(f"sqlite:///{STATISTICS_DB}")
+accounts_db = SQL(f"sqlite:///{ACCOUNTS_DB}")
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
