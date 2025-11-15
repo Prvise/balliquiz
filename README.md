@@ -7,7 +7,7 @@
 ![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey?logo=sqlite)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
-### 🎥 Web-App link  
+###  Web-App link  
 [Check the webapp here](https://balliquiz-1.onrender.com/)
 
 ---
