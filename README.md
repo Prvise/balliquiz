@@ -7,8 +7,8 @@
 ![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey?logo=sqlite)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
-### 🎥 Video Demo  
-[Watch the demo here](https://www.youtube.com/watch?v=-RMKTouQH4A)
+### 🎥 Web-App link  
+[Check the webapp here](https://balliquiz-1.onrender.com/)
 
 ---
 
@@ -183,8 +183,8 @@ Follow these steps to set up and run **Ball IQuiz** locally:
 
 ### 1️⃣ Clone the Repository  
 ```bash
-git clone https://github.com/Prvise/Ball-IQuiz.git
-cd Ball-IQuiz
+git clone [https://github.com/Prvise/balliquiz.git]
+cd balliquiz
 2️⃣ Create a Virtual Environment
 bash
 Copy code
@@ -198,6 +198,7 @@ bash
 Copy code
 pip install -r requirements.txt
 4️⃣ Set Up the Database
+unzip statistics.db && unzip accounts.db
 Create the accounts.db and statistics.db file and initialize the required tables if not already present:
 
 bash
